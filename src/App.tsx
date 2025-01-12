@@ -1,23 +1,22 @@
 import { ThemeProvider } from "@emotion/react"
-import { Box, createTheme } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { Header } from "./components/Header"
 import { Layout } from "./components/Layout"
-
-const theme = createTheme({})
+import { appTheme } from "./config/theme"
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={appTheme}>
       <Box
         component="main"
         sx={{
           height: "100vh",
-          backgroundColor: "#000",
+          backgroundColor: theme => theme.palette.grey[900],
         }}
       >
         <Header />
         <Layout>
-          <h1>Hello World!</h1>
+          <Typography variant="h1">Hello World!</Typography>
         </Layout>
       </Box>
     </ThemeProvider>
